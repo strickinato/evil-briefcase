@@ -92,12 +92,12 @@
 
 (defvar evil-briefcase-mode-map
   (let ((map (make-sparse-keymap)))
-    (evil-define-key* '(motion visual) map "zC" #'evil-briefcase-camel-upper)
-    (evil-define-key* '(motion visual) map "zc" #'evil-briefcase-camel-lower)
-    (evil-define-key* '(motion visual) map "zS" #'evil-briefcase-snake-upper)
-    (evil-define-key* '(motion visual) map "zs" #'evil-briefcase-snake-lower)
-    (evil-define-key* '(motion visual) map "zK" #'evil-briefcase-kebab-upper)
-    (evil-define-key* '(motion visual) map "zk" #'evil-briefcase-kebab-lower)
+    (evil-define-key* '(normal motion visual) map "zC" #'evil-briefcase-camel-upper)
+    (evil-define-key* '(normal motion visual) map "zc" #'evil-briefcase-camel-lower)
+    (evil-define-key* '(normal motion visual) map "zS" #'evil-briefcase-snake-upper)
+    (evil-define-key* '(normal motion visual) map "zs" #'evil-briefcase-snake-lower)
+    (evil-define-key* '(normal motion visual) map "zK" #'evil-briefcase-kebab-upper)
+    (evil-define-key* '(normal motion visual) map "zk" #'evil-briefcase-kebab-lower)
     map))
 
 ;;;###autoload
