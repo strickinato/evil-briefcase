@@ -105,5 +105,5 @@
   :lighter " evil-briefcase"
   )
 
-(provide 'evil-briefcase)
+(provide 'evil-briefcase-mode)
 ;;; evil-briefcase.el ends here
