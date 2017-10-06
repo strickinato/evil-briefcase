@@ -27,14 +27,79 @@
 ;;; Code:
 
 (use-package evil-macros)
+(use-package evil-core)
 (use-package s)
 
-(evil-define-operator evil-briefcase-camel (beg end type)
-  "Convert to camel"
+(evil-define-operator evil-briefcase-camel-upper (beg end type)
+  "Convert text to CamelCase with a Capital C"
   (if (eq type 'block)
-      (evil-apply-on-block #'evil-upcase beg end nil)
-      (let ((str (s-lower-camel-case (buffer-substring-no-properties beg end)))
+      (evil-apply-on-block #'s-upper-camel-case beg end nil)
+      (let ((str (s-upper-camel-case (buffer-substring-no-properties beg end)))
            )
         (progn
           (delete-region beg end)
           (insert str)))))
+
+(evil-define-operator evil-briefcase-camel-lower (beg end type)
+  "Convert text to camelCase with a small C"
+  (if (eq type 'block)
+      (evil-apply-on-block #'s-lower-camel-case beg end nil)
+    (let ((str (s-lower-camel-case (buffer-substring-no-properties beg end)))
+          )
+      (progn
+        (delete-region beg end)
+        (insert str)))))
+
+(evil-define-operator evil-briefcase-snake-lower (beg end type)
+  "Convert text to snake_case, slithering"
+  (if (eq type 'block)
+      (evil-apply-on-block #'s-snake-case beg end nil)
+    (let ((str (s-snake-case (buffer-substring-no-properties beg end)))
+          )
+      (progn
+        (delete-region beg end)
+        (insert str)))))
+
+(evil-define-operator evil-briefcase-snake-upper (beg end type)
+  "Convert text to SNAKE_CASE, AKA SCREAMING_SNAKE_CASE"
+  (if (eq type 'block)
+      (evil-apply-on-block #'s-snake-case beg end nil)
+    (let ((str (s-snake-case (buffer-substring-no-properties beg end)))
+          )
+      (progn
+        (delete-region beg end)
+        (insert str)))))
+
+(evil-define-operator evil-briefcase-kebab-upper (beg end type)
+  "Convert text to KEBAB-KASE, mmmm... THICK MEAT"
+  (if (eq type 'block)
+      (evil-apply-on-block #'s-dashed-words beg end nil)
+    (let ((str (s-dashed-words (buffer-substring-no-properties beg end)))
+          )
+      (progn
+        (delete-region beg end)
+        (insert (upcase str))))))
+
+(evil-define-operator evil-briefcase-kebab-lower (beg end type)
+  "Convert text to kebab-kase, mmmm... hyphens"
+  (if (eq type 'block)
+      (evil-apply-on-block #'s-dashed-words beg end nil)
+    (let ((str (s-dashed-words (buffer-substring-no-properties beg end)))
+          )
+      (progn
+        (delete-region beg end)
+        (insert str)))))
+
+(defvar evil-briefcase-mode-map
+  (let ((map (make-sparse-keymap)))
+    (evil-define-key* '(motion visual) map "zC" #'evil-briefcase-camel-upper)
+    (evil-define-key* '(motion visual) map "zc" #'evil-briefcase-camel-lower)
+    (evil-define-key* '(motion visual) map "zS" #'evil-briefcase-snake-upper)
+    (evil-define-key* '(motion visual) map "zs" #'evil-briefcase-snake-lower)
+    (evil-define-key* '(motion visual) map "zK" #'evil-briefcase-kebab-upper)
+    (evil-define-key* '(motion visual) map "zk" #'evil-briefcase-kebab-lower)
+    map))
+
+(define-minor-mode evil-briefcase-mode
+  :lighter " evil-briefcase"
+  )
