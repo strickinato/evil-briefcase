@@ -25,6 +25,17 @@ Then in the user config later in the file:
 
 ```
 
+### Can be used either as a motion:
+
+`zcE  ` -- Make everything until the whitespace camelcased
+
+`zki( ` -- Make everthing inside the parentheses kebab kase
+
+
+### Or it can be used in visual mode:
+
+`vi(zk ` -- Select everything in the parentheses visually, then make it kebab kase
+
 # Keybindings
 
 | keybinding | function | case |
