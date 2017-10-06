@@ -2,10 +2,33 @@
 
 This package provides a vim motion to quickly switch between cases. Hate camelCase? SWAP IT!!!
 
+# Usage (spacemacs)
+
+In your .spacemacs file (`SPC f e d`):
+
+```el
+
+dotspacemacs-additional-packages
+'(
+  (evil-briefcase :location (recipe :fetcher github :repo "strickinato/evil-briefcase"))
+)
+
+```
+
+Then in the user config later in the file:
+
+```el
+
+(defun dotspacemacs/user-config ()
+  (evil-briefcase-mode 1)
+)
+
+```
 
 # Keybindings
 
 ```
+
 (evil-define-key '(normal motion visual) evil-briefcase-mode-map
     '(normal motion visual) map "zC" #'evil-briefcase-camel-upper) ;; CamelCase
     '(normal motion visual) map "zc" #'evil-briefcase-camel-lower) ;; camelCase
@@ -13,6 +36,7 @@ This package provides a vim motion to quickly switch between cases. Hate camelCa
     '(normal motion visual) map "zs" #'evil-briefcase-snake-lower) ;; snake_case
     '(normal motion visual) map "zK" #'evil-briefcase-kebab-upper) ;; FAT-KEBAB-KASE
     '(normal motion visual) map "zk" #'evil-briefcase-kebab-lower) ;; kebab-kase
+
 ```
 
 # Known Annoyances
@@ -24,7 +48,8 @@ These functions are based of the amazing [s.el](https://github.com/magnars/s.el)
 
 `[:openTheBriefcase]`, with cursor on the `B`:
 
-```
+```el
+
   zci[ #=> [open_the_briefcase] (we lose the colon)
 
 ```
