@@ -28,7 +28,7 @@ Then in the user config later in the file:
 # Keybindings
 
 | keybinding | function | case |
-------
+|------------|----------|------|
 | zc | evil-briefcase-camel-upper | CamelCase            |
 | zc | evil-briefcase-camel-lower | camelCase            |
 | zS | evil-briefcase-snake-upper | SCREAMING_SNAKE_CASE |
