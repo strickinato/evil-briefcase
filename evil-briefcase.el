@@ -100,6 +100,10 @@
     (evil-define-key* '(motion visual) map "zk" #'evil-briefcase-kebab-lower)
     map))
 
+;;;###autoload
 (define-minor-mode evil-briefcase-mode
   :lighter " evil-briefcase"
   )
+
+(provide 'evil-briefcase)
+;;; evil-briefcase.el ends here
