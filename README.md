@@ -27,17 +27,14 @@ Then in the user config later in the file:
 
 # Keybindings
 
-```
-
-(evil-define-key '(normal motion visual) evil-briefcase-mode-map
-    '(normal motion visual) map "zC" #'evil-briefcase-camel-upper) ;; CamelCase
-    '(normal motion visual) map "zc" #'evil-briefcase-camel-lower) ;; camelCase
-    '(normal motion visual) map "zS" #'evil-briefcase-snake-upper) ;; SCREAMING_SNAKE_CASE
-    '(normal motion visual) map "zs" #'evil-briefcase-snake-lower) ;; snake_case
-    '(normal motion visual) map "zK" #'evil-briefcase-kebab-upper) ;; FAT-KEBAB-KASE
-    '(normal motion visual) map "zk" #'evil-briefcase-kebab-lower) ;; kebab-kase
-
-```
+| keybinding | function | case |
+------
+| zc | evil-briefcase-camel-upper | CamelCase            |
+| zc | evil-briefcase-camel-lower | camelCase            |
+| zS | evil-briefcase-snake-upper | SCREAMING_SNAKE_CASE |
+| zs | evil-briefcase-snake-lower | snake_case           |
+| zK | evil-briefcase-kebab-upper | FAT-KEBAB-KASE       |
+| zk | evil-briefcase-kebab-lower | kebab-kase           |
 
 # Known Annoyances
 
