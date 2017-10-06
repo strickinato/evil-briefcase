@@ -26,9 +26,9 @@
 
 ;;; Code:
 
-(use-package evil-macros)
-(use-package evil-core)
-(use-package s)
+(require 'evil-macros)
+(require 'evil-core)
+(require 's)
 
 (evil-define-operator evil-briefcase-camel-upper (beg end type)
   "Convert text to CamelCase with a Capital C"
