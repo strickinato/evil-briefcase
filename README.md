@@ -40,7 +40,7 @@ Then in the user config later in the file:
 
 | keybinding | function | case |
 |------------|----------|------|
-| zc | evil-briefcase-camel-upper | CamelCase            |
+| zC | evil-briefcase-camel-upper | CamelCase            |
 | zc | evil-briefcase-camel-lower | camelCase            |
 | zS | evil-briefcase-snake-upper | SCREAMING_SNAKE_CASE |
 | zs | evil-briefcase-snake-lower | snake_case           |
