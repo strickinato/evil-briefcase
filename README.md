@@ -10,7 +10,7 @@ In your .spacemacs file (`SPC f e d`):
 
 dotspacemacs-additional-packages
 '(
-  (evil-briefcase :location (recipe :fetcher github :repo "strickinato/evil-briefcase"))
+  (evil-briefcase-mode :location (recipe :fetcher github :repo "strickinato/evil-briefcase"))
 )
 
 ```
