@@ -4,6 +4,7 @@
 
 ;; Author: Aaron Strick <aaronstrick@gmail.com>
 ;; Version: 0.0.1
+;; Package-Requires: ((evil "1.2.13") (s "1.12.0"))
 ;; Keywords: strings, evil
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -26,9 +27,9 @@
 
 ;;; Code:
 
-(use-package evil-macros)
-(use-package evil-core)
-(use-package s)
+(require 'evil-macros)
+(require 'evil-core)
+(require 's)
 
 (evil-define-operator evil-briefcase-camel-upper (beg end type)
   "Convert text to CamelCase with a Capital C"
@@ -105,5 +106,5 @@
   :lighter " evil-briefcase"
   )
 
-(provide 'evil-briefcase-mode)
+(provide 'evil-briefcase)
 ;;; evil-briefcase.el ends here
