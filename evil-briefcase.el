@@ -65,7 +65,7 @@
   "Convert text to SNAKE_CASE, AKA SCREAMING_SNAKE_CASE"
   (if (eq type 'block)
       (evil-apply-on-block #'s-snake-case beg end nil)
-    (let ((str (s-snake-case (buffer-substring-no-properties beg end)))
+    (let ((str (s-upcase (s-snake-case (buffer-substring-no-properties beg end))))
           )
       (progn
         (delete-region beg end)
